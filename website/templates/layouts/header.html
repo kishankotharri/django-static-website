@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="author" content="Jthemes"/>	
+		<meta name="description" content="Task TrackerPro - Task Management Software"/>
+		<meta name="keywords" content="Responsive, HTML5 Template, Jthemes, Landing, Startup, Software, Business, Company, Creative, Freelancers">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+				
+  		<!-- SITE TITLE -->
+		<title>Task TrackerPro - Task Management Software</title>
+
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="{% static 'front/images/favicon.png' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'front/images/favicon.png' %}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'front/images/apple-touch-icon-152x152.png' %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'front/images/apple-touch-icon-120x120.png' %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static 'front/images/apple-touch-icon-76x76.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'front/images/apple-touch-icon.png' %}">
+		<link rel="icon" href="{% static 'front/images/apple-touch-icon.png' %}" type="image/x-icon">
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">		
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900" rel="stylesheet"> 
+
+		<!-- BOOTSTRAP CSS -->
+		<link href="{% static 'front/css/bootstrap.min.css' %}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" rel="stylesheet" crossorigin="anonymous">		
+		<link href="{% static 'front/css/flaticon.css' %}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{% static 'front/css/menu.css' %}" rel="stylesheet">	
+		<link id="effect" href="{% static 'front/css/dropdown-effects/fade-down.css' %}" media="all" rel="stylesheet">
+		<link href="{% static 'front/css/magnific-popup.css' %}" rel="stylesheet">	
+		<link href="{% static 'front/css/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'front/css/owl.theme.default.min.css' %}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{% static 'front/css/animate.css' %}" rel="stylesheet">
+	
+		<link href="{% static 'front/css/skyblue-theme.css' %}" rel="stylesheet">
+
+		<!-- RESPONSIVE CSS -->
+		<link href="{% static 'front/css/responsive.css' %}" rel="stylesheet"> 
+	
+	</head>
+		
+	<body>
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loader-wrapper">
+			<div id="loading">
+				<div class="cssload-loader">
+					<div class="cssload-ball cssload-ball-1"></div>
+					<div class="cssload-ball cssload-ball-2"></div>
+					<div class="cssload-ball cssload-ball-3"></div>
+					<div class="cssload-ball cssload-ball-4"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page">
+
+			<!-- HEADER ============================================= -->
+			<header id="header" class="header tra-menu navbar-dark">
+
+				<div class="header-wrapper">
+
+					<!-- MOBILE HEADER -->
+					<div class="wsmobileheader clearfix">	  	
+						<span class="smllogo"><img src="{% static 'front/images/logo-01.png' %}" width="155" height="36" alt="mobile-logo"/></span>
+						<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+					</div>
+
+					<!-- NAVIGATION MENU -->
+					<div class="wsmainfull menu clearfix pt-2">
+					
+						<div class="wsmainwp clearfix">
+
+							<!-- LOGO IMAGE -->
+							<!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 310 x 72 pixels) -->
+							<div class="desktoplogo"><a href="{% url 'front:index' %}#hero-10" class="logo-black"><img src="{% static 'front/images/logo-01.png' %}" width="155" height="36" alt="header-logo"></a></div>
+							<div class="desktoplogo"><a href="{% url 'front:index' %}#hero-10" class="logo-white"><img src="{% static 'front/images/logo-white.png' %}" width="155" height="36" alt="header-logo"></a></div>
+
+
+							<!-- MAIN MENU -->
+							<nav class="wsmenu clearfix">
+								<ul class="wsmenu-list">
+
+									<li class="nl-simple" aria-haspopup="true"><a href="{% url 'front:index' %}">Home</a></li>
+
+									<!-- DROPDOWN MENU -->
+									<li aria-haspopup="true"><a href="#">About <span class="wsarrow"></span></a>
+										<ul class="sub-menu">
+											<li aria-haspopup="true"><a href="{% url 'front:index' %}#content-3">Best Solution</a></li>
+											<li aria-haspopup="true"><a href="{% url 'front:index' %}#services-5">Core Features</a></li>						           			
+											<li aria-haspopup="true"><a href="{% url 'front:index' %}#reviews-3">Testimonials</a></li>	
+											<li aria-haspopup="true"><a href="{% url 'front:index' %}#content-2">How It Works</a></li>	
+										</ul>
+									</li>	<!-- END DROPDOWN MENU -->
+
+
+									<!-- SIMPLE NAVIGATION LINK -->
+									<li class="nl-simple" aria-haspopup="true"><a href="{% url 'front:faqs' %}">FAQs</a></li>
+
+									<!-- SIMPLE NAVIGATION LINK -->
+									<li class="nl-simple" aria-haspopup="true"><a href="{% url 'front:contacts' %}">Contact Us</a></li>
+
+									<!-- HEADER BUTTON -->
+									<li class="nl-simple" aria-haspopup="true">
+										<a href="{% url 'front:index' %}#cta-6" class="btn btn-primary tra-white-hover last-link">Download</a>
+									</li>
+									
+								</ul>
+							</nav>	<!-- END MAIN MENU -->
+
+						</div>
+					</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->

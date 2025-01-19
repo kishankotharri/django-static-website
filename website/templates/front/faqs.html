@@ -1,0 +1,191 @@
+{% load static %}
+{% include "layouts/header.html" %}
+
+			<!-- PAGE HERO
+			============================================= -->	
+			<section id="team-page" class="page-hero-section bg-lightgrey tra-lines division">
+				<div class="container">	
+					
+
+					<!-- PAGE HERO TEXT -->
+					<div class="row">	
+						<div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+							<div class="hero-txt text-center">
+
+								<!-- Title -->
+								<h3 class="h3-md">Frequently Asked Questions</h3>
+
+								<!-- Text -->
+								<!-- <p class="grey-color">Semper lacus cursus porta, feugiat primis ultrice ligula risus auctor rhoncus
+								   purus ipsum primis in cubilia vitae laoreet augue
+								</p> -->
+
+							</div>
+						</div>	
+					</div>	<!-- END PAGE HERO TEXT -->
+
+
+				</div>	   <!-- End container --> 
+			</section>	<!-- END PAGE HERO -->	
+
+
+			<!-- FAQs-1
+			============================================= -->
+			<section id="faqs-1" class="faqs-1 wide-80 faqs-section division">				
+				<div class="container">
+
+
+					<!-- FAQs-1 QUESTIONS -->	
+					<div class="faqs-1-questions pc-15">
+						<div class="row">
+						
+
+							<!-- QUESTIONS WRAPPER -->
+							<div class="col-lg-6">
+								<div class="questions-wrapper pc-30">
+
+
+									<!-- QUESTION #1 -->
+									<div class="question">
+
+										<!-- Question -->
+										<h5 class="h5-xs"><span>1.</span> What does the main screen display after logging in?</h5>
+
+										<!-- Answer -->
+										<p class="p-md grey-color">The main screen shows the schedule for today and the next seven days.
+											 If there are no appointments, it will display an empty home page with dates.
+										</p>
+
+									</div>	
+
+
+									<!-- QUESTION #2 -->					
+									<div class="question">
+
+										<!-- Question -->
+										<h5 class="h5-xs"><span>2.</span>How do I create a new appointment?</h5>
+
+										<!-- Answer -->
+										<p class="p-md grey-color">Click on the 'Create' button on the main screen, then select from the four options:
+											 Quotation, Installation, Service, or Other, and fill in the required details.
+										</p>
+
+									</div>
+
+											
+									<!-- QUESTION #3 -->
+									<div class="question">
+
+										<!-- Question -->
+										<h5 class="h5-xs"><span>3.</span> What happens if I forget to fill in mandatory fields while creating an appointment?</h5>
+
+										<!-- Answer -->
+										<p class="p-md grey-color">If you attempt to submit the form with any mandatory fields left empty, 
+											an error message will appear stating, “Please fill in all required fields.”
+
+										</p>									
+
+									</div>
+
+
+
+								</div>
+							</div>	<!-- END QUESTIONS WRAPPER -->
+
+
+							<!-- QUESTIONS WRAPPER -->
+							<div class="col-lg-6">
+								<div class="questions-wrapper pc-30">
+
+
+									
+									<!-- QUESTION #4 -->
+									<div class="question">
+										<!-- Question -->
+										<h5 class="h5-xs"><span>4.</span>Can I edit profile, site, or scheduling details after creating an appointment?</h5>
+										<!-- Answer -->
+										<p class="p-md grey-color">Yes, you can click the edit button on the confirmation page to redirect to the respective profile, 
+											site, or scheduling details page for any updates.
+										</p>
+									</div>	
+									<!-- QUESTION #5 -->					
+									<div class="question">
+										<!-- Question -->
+										<h5 class="h5-xs"><span>5.</span>Where can I find all the products?</h5>
+										<!-- Answer -->
+										<p class="p-md grey-color">You can access all products from the Product List section in the app. Simply click on the Product List page to view all available products and 
+										their categories. You can also filter products by category or use the search bar to find specific items.
+										</p>
+									</div>
+									<!-- QUESTION #6 -->
+									<div class="question">
+										<!-- Question -->
+										<h5 class="h5-xs"><span>6.</span> How do I view my quotation or invoice history?</h5>
+										<!-- Answer -->
+										<p class="p-md grey-color">You can view your last 3 or 6 months' quotations and invoices by clicking on the respective options in the history section.
+											 You can also apply custom date filters to see specific records.
+										</p>									
+									</div>
+
+								</div>
+							</div>	<!-- END QUESTIONS WRAPPER -->
+
+
+						</div>	<!-- End row -->
+					</div>	<!-- END FAQs-1 QUESTIONS -->	
+
+
+				</div>     <!-- End container -->
+			</section>	<!-- END FAQs-1 -->
+
+
+			<!-- CONTACTS-2
+			============================================= -->
+			<section id="contacts-2" class="contacts-2 bg-lightgrey wide-80 contacts-section division">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row">	
+						<div class="col-lg-10 offset-lg-1">
+							<div class="section-title mb-60 text-center">		
+
+								<!-- Title 	-->	
+								<h3 class="h3-md">Have Questions or Need Help?</h3>	
+
+								
+									
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- CONTACT FORM -->
+			        <div class="row">
+			            <div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2">
+				            <div class="form-wrapper">
+				                <form action="{% url 'front:faqs' %}" method="POST"> 
+									{% csrf_token %}
+									<table>
+										<div class="fieldWrapper">
+											{{ contact_form.as_table }}
+										  </div>
+									<tr>
+										<th></th>
+										<td><input type="submit"></td>
+									</tr>	
+									</table>
+								</form>
+								{% if contact_form_error == True %}
+									{{contact_form_message}}
+								{% endif %} 
+				            </div>    
+			            </div>  
+			        </div>     <!-- END CONTACT FORM -->	
+
+
+				</div>	   <!-- End container -->		
+			</section>	<!-- END CONTACTS-2 -->
+
+
+{% include "layouts/footer.html" %}

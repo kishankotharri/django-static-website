@@ -1,0 +1,135 @@
+{% load static %}
+{% include "layouts/header.html" %}
+
+
+			<!-- PAGE HERO
+			============================================= -->	
+			<section id="team-page" class="page-hero-section bg-lightgrey tra-lines division">
+				<div class="container">	
+					
+
+					<!-- PAGE HERO TEXT -->
+					<div class="row">	
+						<div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+							<div class="hero-txt text-center">
+
+								<!-- Title -->
+								<h3 class="h3-md">Have Questions Or Need Help?</h3>
+
+								
+
+							</div>
+						</div>	
+					</div>	<!-- END PAGE HERO TEXT -->
+
+
+				</div>	   <!-- End container --> 
+			</section>	<!-- END PAGE HERO -->	
+
+
+			<!-- CONTACTS-1
+			============================================= -->
+			<section id="contacts-1" class="contacts-1 wide-80 contacts-section division">
+				<div class="container">
+
+
+					<div class="row">
+						<div class="col-xl-10 offset-xl-1">
+				 			<div class="row">
+
+
+								<!-- CONTACTS INFO -->
+						 		<div class="col-md-4">
+
+							 		<!-- LOCATION -->
+									<div class="contact-1-box mt-10">
+										<h5 class="h5-xs">Our Location</h5>														
+										<p class="grey-color">Empire Business Hub, B-1212,<br />  Ahmedabad, Gujarat 380060, India </p>
+									</div>
+
+									<!-- PHONES -->
+									<div class="contact-1-box">
+										<h5 class="h5-xs">Contact Phones</h5>	
+										<p class="grey-color">Phone : +12 3 3456 7890</p>
+										<p class="grey-color">Fax : +12 9 8765 4321</p>
+									</div>
+
+									<!-- WORKING HOURS -->
+									<div class="contact-1-box">
+										<h5 class="h5-xs">Working Hours</h5>	
+										<p class="grey-color">Mon - Fri: 8:30am - 7:30pm</p>
+										<p class="grey-color">Sat: 8:30am - 3:30pm</p>
+									</div>
+
+								</div>	<!-- END CONTACTS INFO -->
+
+
+								<!-- CONTACT FORM -->
+								<div class="col-md-8">
+						            <div class="form-wrapper">
+						                <form action="{% url 'front:contacts' %}" method="POST"> 
+											{% csrf_token %}
+											<table>
+												<div class="fieldWrapper">
+													{{ contact_form.as_table }}
+												  </div>
+											<tr>
+												<th></th>
+												<td><input type="submit"></td>
+											</tr>	
+											</table>
+										</form>
+										{% if contact_form_error == True %}
+											{{contact_form_message}}
+										{% endif %}
+						            </div>  
+					            </div> 	<!-- END CONTACT FORM --> 
+
+
+					        </div>
+					    </div>
+					</div>	<!-- End row -->	
+
+
+				</div>	   <!-- End container -->		
+			</section>	<!-- END CONTACTS-1 -->
+
+
+			<!-- CALL TO ACTION-1
+			============================================= -->
+			<section id="cta-1" class="cta-1 bg-01 cta-section division">
+				<div class="container white-color">
+					<div class="row d-flex align-items-center">
+
+
+						<!-- CALL TO ACTION TEXT -->
+						<div class="col-lg-7">
+							<div class="cta-1-txt pr-25">
+
+								<!-- Title -->	
+								<h4 class="h4-sm">Let's make something great together</h4>
+
+								
+
+							</div>
+						</div>
+
+
+						<!-- CALL TO ACTION BUTTON -->
+						<div class="col-lg-5">
+							<div class="cta-1-btn text-right">
+
+								<!-- Button -->
+								<a href="{% url 'front:index' %}" class="btn btn-md btn-primary tra-white-hover">Let's Started Now</a>
+
+								
+							</div>
+						</div>	
+
+
+					</div>    <!-- End row -->
+				</div>	   <!-- End container -->	
+			</section>	<!-- END CALL TO ACTION-1 -->
+
+
+{% include "layouts/footer.html" %}
