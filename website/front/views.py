@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import ContactForm
+from .models import ContactForm
+from .serializers import ContactFormSerializer
 
 # Create your views here.
 def index(request):
@@ -41,3 +43,9 @@ def terms_conditions(request):
 
 def cookie_policy(request):
     return render(request, "front/cookie-policy.html")
+
+def all_data(request):
+    if request.method == 'GET':
+        all_contacts = ContactForm.objects.all()
+        serializer_data = ContactFormSerializer(all_contacts, many=True)
+        return JsonResponse(serializer_data.data, safe=False)
