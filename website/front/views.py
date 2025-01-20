@@ -44,8 +44,20 @@ def terms_conditions(request):
 def cookie_policy(request):
     return render(request, "front/cookie-policy.html")
 
-def all_data(request):
+def get_data(request):
     if request.method == 'GET':
-        all_contacts = ContactForm.objects.all()
-        serializer_data = ContactFormSerializer(all_contacts, many=True)
-        return JsonResponse(serializer_data.data, safe=False)
+        try:
+            all_contacts = ContactForm.objects.all()
+            serializer_data = ContactFormSerializer(all_contacts, many=True)
+            return JsonResponse(serializer_data.data, safe=False)
+        except ContactForm.DoesNotExist:
+                return JsonResponse({"error": "Contacts not found."}, status=404)
+    
+def get_data_by_id(request, data_id):
+    if request.method == 'GET':
+        try:
+            contact = ContactForm.objects.get(id=data_id)
+            serializer_data = ContactFormSerializer(contact)
+            return JsonResponse(serializer_data.data, safe=False)
+        except ContactForm.DoesNotExist:
+            return JsonResponse({"error": "Contact not found."}, status=404)

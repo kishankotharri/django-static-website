@@ -1,5 +1,5 @@
 #front/urls.py 
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 app_name = 'front' 
@@ -12,5 +12,7 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
     path('terms-conditions/', views.terms_conditions, name='terms-conditions'),
     path('cookie-policy/', views.cookie_policy, name='cookie-policy'),
-    path('all-data/', views.all_data),
+    path('get-data/', views.get_data),
+    path('get-data/<int:data_id>', views.get_data_by_id),
+    #re_path(r'^(?P<menu_id>[0-9]{2}+)/$', views.menu_by_id),
 ]
