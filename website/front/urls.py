@@ -12,10 +12,5 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
     path('terms-conditions/', views.terms_conditions, name='terms-conditions'),
     path('cookie-policy/', views.cookie_policy, name='cookie-policy'),
-    path('get-data/', views.get_data),
-    path('add-data/', views.add_data),
-    path('get-data/<int:data_id>/', views.get_data_by_id),
-    path('update-data/<int:data_id>/', views.update_data_by_id),
-    path('delete-data/<int:data_id>/', views.delete_data_by_id),
     #re_path(r'^(?P<menu_id>[0-9]{2}+)/$', views.menu_by_id),
 ]

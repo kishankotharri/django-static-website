@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('front.urls', namespace='front')),
+    path('api/', include('restapi_app.urls', namespace='restapi_app')),
 ]
