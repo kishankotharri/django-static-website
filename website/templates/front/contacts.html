@@ -67,7 +67,7 @@
 								<!-- CONTACT FORM -->
 								<div class="col-md-8">
 						            <div class="form-wrapper">
-						                <form action="{% url 'front:contacts' %}" method="POST"> 
+						                <form enctype="multipart/form-data" action="{% url 'front:contacts' %}" method="POST"> 
 											{% csrf_token %}
 											<table>
 												<div class="fieldWrapper">
